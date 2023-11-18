@@ -13,7 +13,9 @@ public class Expense {
     }
 
     public List<Transaction> getTransactions(){
+
         return this.transactions;
+        
     }
     
 }
