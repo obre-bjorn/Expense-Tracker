@@ -1,11 +1,8 @@
 import java.util.Date;
 
-
 /*  TO DO: 
     
     Remove the deprecated date method and use the Calender Object to get Year
-
-
 
 */
 
@@ -19,23 +16,25 @@ public class ExpenseTracker {
         // ! Interchange Expense and Transaction classes
 
 
+        CategoryList categoryListInstance  = new CategoryList();
+
+
+        Category general = categoryListInstance.getCategories().get(0);
 
 
         // * Creating Transactions
-        Transaction jaba = new Transaction();
+        Expense jaba = new Expense(100,general,new Date(2020,11,2));
 
-        jaba.setAmount(100);
-        jaba.setCategory("Anasa");
-        jaba.setDate(2020,11,2);
+       
         
         Date leo = jaba.getDate();
 
-        System.out.println(jaba.getAmount() + " " +  jaba.getCategory() + " " + leo.getYear());
+        System.out.println(jaba.getAmount() + " " +  jaba.getCategory().getCategoryName() + " " + leo.getYear());
 
 
         // * Creating Expense (Holder for transactions)
 
-        Expense expenses = new Expense();
+        ExpenseList expenses = new ExpenseList();
 
 
         expenses.addTransaction(jaba);
@@ -43,7 +42,7 @@ public class ExpenseTracker {
         
 
 
-        System.out.println(expenses.getTransactions().get(0).getCategory());
+        // System.out.println(expenses.getTransactions().get(0).getCategory());
     }
     
 }

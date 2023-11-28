@@ -1,21 +1,57 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+// import java.util.Calendar;
 
 public class Expense {
 
-    private List<Transaction> transactions = new ArrayList<>() ; 
-    
-    
-    public void addTransaction(Transaction transaction){
+    private int amount;
+    private Category category;;
+    private Date date;
 
-        this.transactions.add(transaction); 
-    
+
+    Expense(int amount, Category category, Date expenseDate ){
+
+        this.amount = amount;
+        this.category = category;
+        this.date = expenseDate;
+
     }
 
-    public List<Transaction> getTransactions(){
+    // ^ Setters for Expense Object.
 
-        return this.transactions;
-        
-    }
+    // public void setAmount(int priceInput){
+    //     this.amount = priceInput;
+
+    // }
+
+    // public void setCategory(Category categoryInput){
+
+    //     this.category = categoryInput;
+    // }
     
+
+    // public void setDate(int yr, int mon, int day){
+
+    //     this.date = new Date(yr,mon,day);
+
+    // }
+
+    public Date getDate(){
+        return this.date;
+    }
+
+
+
+    public int getAmount(){
+        return this.amount;
+    }
+
+
+    public Category getCategory(){
+        return this.category;
+    }
+
+
+   
+
 }
