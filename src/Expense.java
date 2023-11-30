@@ -1,19 +1,66 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+// import java.util.Calendar;
 
-public class Expense {
+public class Expense extends Transaction {
 
-    private List<Transaction> transactions = new ArrayList<>() ; 
     
-    
-    public void addTransaction(Transaction transaction){
+    private Category category;;
+    private Date date;
 
-        this.transactions.add(transaction); 
-    
+
+    Expense(String description,int amount, Category category, Date expenseDate ){
+        super(description, amount);
+        this.category = category;
+        this.date = expenseDate;
+        this.category.addExpense(amount);
     }
 
-    public List<Transaction> getTransactions(){
-        return this.transactions;
-    }
+    // ^ Setters for Expense Object.
+
+    // public void setAmount(int priceInput){
+    //     this.amount = priceInput;
+
+    // }
+
+    // public void setCategory(Category categoryInput){
+
+    //     this.category = categoryInput;
+    // }
     
+
+    // public void setDate(int yr, int mon, int day){
+
+    //     this.date = new Date(yr,mon,day);
+
+    // }
+
+    public Date getDate(){
+        return this.date;
+    }
+
+    public double getAmount(){
+        return super.amount;
+    }
+
+
+    public String getName(){
+        return  super.description;
+    }
+
+
+    public Category getCategory(){
+        return this.category;
+    }
+
+
+   public static void main(String[] args) {
+    
+        Category food = new Category("Food");
+
+        Expense lunch = new Expense( "Bought Chapo and Beans", 120, food, new Date());
+
+        System.out.println(lunch.getName() + " which was Ksh." + lunch.getAmount() );
+   }
+
 }
