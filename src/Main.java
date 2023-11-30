@@ -5,6 +5,7 @@ class Main extends JFrame{
     Main(){
 
         setSize(1200, 800);
+        setTitle("Expense Tracker");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 

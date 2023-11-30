@@ -36,11 +36,11 @@ public class PieChartExample extends JFrame {
     private DefaultPieDataset createDataset() {
 
         DefaultPieDataset dataset = new DefaultPieDataset();
-        dataset.setValue("Apache", 52);
-        dataset.setValue("Nginx", 31);
+        dataset.setValue("Apache", 10);
+        dataset.setValue("Nginx", 0);
         dataset.setValue("IIS", 12);
         dataset.setValue("LiteSpeed", 2);
-        dataset.setValue("Google server", 1);
+        dataset.setValue("Google server", 10);
         dataset.setValue("Others", 2);
 
         return dataset;

@@ -1,17 +1,23 @@
-public class Category {
+import java.util.List;
+
+public class Category extends Transaction {
     
-    private String name;
-    private double total;
+
+    List<Expense> expenseList;
+
+    String name;
+    double categoryTotal;
     
     
     Category(String name){
-        this.name = name;
-        this.total = 0;
+        
+        super(name, 0);
+        this.categoryTotal = 0;
     }
 
 
     void addExpense(double amount){
-        this.total += amount;
+        this.categoryTotal += amount;
 
     }
 
@@ -21,7 +27,7 @@ public class Category {
 
 
     double getTotal(){
-        return this.total;
+        return this.categoryTotal;
     }
 
 

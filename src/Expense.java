@@ -2,19 +2,18 @@ import java.util.Calendar;
 import java.util.Date;
 // import java.util.Calendar;
 
-public class Expense {
+public class Expense extends Transaction {
 
-    private int amount;
+    
     private Category category;;
     private Date date;
 
 
-    Expense(int amount, Category category, Date expenseDate ){
-
-        this.amount = amount;
+    Expense(String description,int amount, Category category, Date expenseDate ){
+        super(description, amount);
         this.category = category;
         this.date = expenseDate;
-
+        this.category.addExpense(amount);
     }
 
     // ^ Setters for Expense Object.
@@ -40,10 +39,13 @@ public class Expense {
         return this.date;
     }
 
+    public double getAmount(){
+        return super.amount;
+    }
 
 
-    public int getAmount(){
-        return this.amount;
+    public String getName(){
+        return  super.description;
     }
 
 
@@ -52,6 +54,13 @@ public class Expense {
     }
 
 
-   
+   public static void main(String[] args) {
+    
+        Category food = new Category("Food");
+
+        Expense lunch = new Expense( "Bought Chapo and Beans", 120, food, new Date());
+
+        System.out.println(lunch.getName() + " which was Ksh." + lunch.getAmount() );
+   }
 
 }
