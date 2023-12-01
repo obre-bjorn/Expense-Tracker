@@ -25,11 +25,21 @@ public class CategoryList {
         this.Categories.add(category);
     }
 
+     public Category  getCategory(String categoryName){
+        
+        for(Category category : this.Categories){
+            if(category.getCategoryName().equalsIgnoreCase(categoryName)){
+                return category;
+            }
+            
+        }
+
+        return null;
+
+     }
 
     public static void main(String[] args) {
         
-        CategoryList Categories  = new CategoryList(); 
-        System.out.println(Categories.getCategories());
 
 
     }

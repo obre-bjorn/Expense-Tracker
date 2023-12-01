@@ -9,11 +9,11 @@ public class Expense extends Transaction {
     private Date date;
 
 
-    Expense(String description,int amount, Category category, Date expenseDate ){
+    Expense(String description,double amount, Category category, Date expenseDate ){
         super(description, amount);
         this.category = category;
         this.date = expenseDate;
-        this.category.addExpense(amount);
+        // this.category.addExpense(amount);
     }
 
     // ^ Setters for Expense Object.
@@ -57,10 +57,15 @@ public class Expense extends Transaction {
    public static void main(String[] args) {
     
         Category food = new Category("Food");
+        Category rent = new Category("Rent");
 
         Expense lunch = new Expense( "Bought Chapo and Beans", 120, food, new Date());
+        Expense bnb = new Expense("Paid house rent", 11000, rent, new Date());
 
         System.out.println(lunch.getName() + " which was Ksh." + lunch.getAmount() );
+        System.out.println(bnb.getName() + " which was Ksh." + bnb.getAmount() );
+
    }
+
 
 }

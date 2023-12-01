@@ -8,6 +8,11 @@
     public void updateTotalAmount(double amount) {
         this.totalAmountSpent += amount;
     }
+
+    public double getTotalAmountSpent(){
+        return this.totalAmountSpent;
+    }
+    
 }
 
 

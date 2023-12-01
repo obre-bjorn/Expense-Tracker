@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Category extends Transaction {
     
 
-    List<Expense> expenseList;
+    List<Expense> expenseList = new ArrayList<>();
 
     String name;
     double categoryTotal;
@@ -16,13 +17,14 @@ public class Category extends Transaction {
     }
 
 
-    void addExpense(double amount){
-        this.categoryTotal += amount;
+    void addExpense(Expense expense){
+        this.categoryTotal += expense.getAmount();
+        this.expenseList.add(expense);
 
     }
 
     String getCategoryName(){
-        return this.name;
+        return super.description;
     }
 
 
