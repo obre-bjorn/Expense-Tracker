@@ -73,7 +73,7 @@ class Main extends JFrame{
         
         // Menu for adding categories
 
-        JMenuItem addCategoryMenuItem = new JMenuItem("Add Category View");
+        JMenuItem addCategoryMenuItem = new JMenuItem("Add Category");
         addCategoryMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,7 +118,16 @@ class Main extends JFrame{
         totalSpentLabel.setHorizontalAlignment(SwingConstants.CENTER);
         // Add label to the right panel
         rightPanel.add(totalSpentLabel, BorderLayout.CENTER);
+        rightPanel.setBackground(Color.darkGray);
+        totalSpentLabel.setForeground(Color.yellow);
 
+        addExpenseButton.setBackground(Color.black);
+        addExpenseButton.setForeground(Color.yellow);
+        addExpenseButton.setFont(new Font("Calbri",Font.BOLD,30));
+
+        getSummaryButton.setBackground(Color.yellow);
+        getSummaryButton.setForeground(Color.black);
+        getSummaryButton.setFont(new Font("Calbri",Font.BOLD,30));
 
           addExpenseButton.addActionListener(new ActionListener() {
             @Override
@@ -330,10 +339,15 @@ class Main extends JFrame{
                 categoryInfoPanel.add(expenseLabel);
             }
         }
+        
+        categoryInfoPanel.setPreferredSize(new Dimension(300, 400));
+        // Create a JScrollPane to make the categoryInfoPanel scrollable
+        JScrollPane categoryScrollPane = new JScrollPane(categoryInfoPanel);
+        categoryScrollPane.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15)); // Add padding
 
         JPanel containerPanel = new JPanel(new GridLayout(2, 1));
         containerPanel.add(chartPanel);
-        containerPanel.add(categoryInfoPanel);
+        containerPanel.add(categoryScrollPane);
 
 
         pieChartFrame.getContentPane().add(containerPanel);
